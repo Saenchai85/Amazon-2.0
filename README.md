@@ -8,7 +8,7 @@ Run commands
 
 1) ```npm install```
 
-2) ``` export NODE_OPTIONS=--openssl-legacy-provider before ```
+2) ``` export NODE_OPTIONS=--openssl-legacy-provider  ```
 
 
 
