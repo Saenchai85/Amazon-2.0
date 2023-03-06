@@ -22,10 +22,10 @@ function Header() {
         <img
             onClick={() => router.push('/')}
             src="https://links.papareact.com/f90"
-            width={150}
+            width={100}
             height={40}
             objectFit="contain"
-            className='cursor-pointer'
+            className='cursor-pointer mx-5'
             />
         </div>
 
