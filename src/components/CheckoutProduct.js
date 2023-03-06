@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/solid'
 import { addToBasket, removeFromBasket } from '../slices/basketSlice'
+import { useDispatch } from 'react-redux'
+
 
 function CheckoutProduct({id, 
     title, 
@@ -78,7 +80,7 @@ function CheckoutProduct({id,
       
 
 }
-import { useDispatch } from 'react-redux'
+
   
 
 export default CheckoutProduct
