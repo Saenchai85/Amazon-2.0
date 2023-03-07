@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import {SearchIcon, ShoppingCartIcon, MenuIcon} from '@heroicons/react/solid'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import { useRouter } from 'next/router'
@@ -24,7 +23,7 @@ function Header() {
             src="https://links.papareact.com/f90"
             width={100}
             height={40}
-            objectFit="contain"
+            objectfit="contain"
             className='cursor-pointer mx-5'
             />
         </div>
