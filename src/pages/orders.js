@@ -13,10 +13,10 @@ function Orders({orders}) {
   return (
     <div>
         <Header />
-        <main className='max-x-sreen-lg mx-auto p-10'>
+        <main className='max-w-screen-lg mx-auto p-10'>
             <h1 className='text-3xl border-b mb-2 pb-1 border-yellow-400'>Your Orders</h1>
             {session ? (
-                <h2>x Orders</h2>
+                <h2>{orders.length} Orders</h2>
             ): (
                 <h2>Please sign in to see your order</h2>
             )}
@@ -57,7 +57,7 @@ export async function getServerSideProps(context) {
     } 
 
     // Firebase db
-    const stripeOders = await db
+    const stripeOrders = await db
     .collection('users')
     .doc(session.user.email)
     .collection('orders')
@@ -66,9 +66,10 @@ export async function getServerSideProps(context) {
 
     // Stripe orders
     const orders = await Promise.all(
-        stripeOders.docs.map(async (order) => ({
+        stripeOrders.docs.map(async (order) => ({
             id: order.id,
-            amount: order.data().amount_shipping,
+            amount: order.data().amount,
+            amountShipping: order.data().amount_shipping,
             images: order.data().images,
             timestamp: moment(order.data().timestamp.toDate()).unix(),
             items: (
